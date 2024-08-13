@@ -14,15 +14,14 @@
                     <div class="author">Автор: {{ book.author }}</div>
                     <div class="pub_date">Дата публикации: {{ book.pub_date }}</div>
                 </div>
-
             {% endfor %}
-            {% if page.has_previous %}
-                <a class="button button-primary" href="{{ page.previous_page_number }}">< Назад</a>
-                {% endif %}
-                <a class="button disabled" href="">Не понятно</a>
-                {% if page.has_next %}
-                <a class="button button-primary" href={{book.pub_date}}>{{ book.pub_date }}></a>
-            {% endif %}
+
+
+                <a class="button button-primary" href="/books/{{ previous_book.pub_date }}">{{ previous_book.pub_date }}</a>
+                <a class="button button-primary" href="/books/{{ next_book.pub_date }}">{{ next_book.pub_date }}</a>
+            {% if page.has_next %}{% endif %}
+            {% if previous_book.has %}{% endif %}
+
         </div>
     </div>
 {% endblock %}

@@ -22,6 +22,7 @@ urlpatterns = [
     path('', books.views.books_view),
     path('admin/', admin.site.urls),
     path('books/', books.views.books_view),
-    path('books/<pub_date>/', books.views.pub_date_book),
+    # path('books/<pub_date>/', books.views.pub_date_book),
+    path('books/<pub_date>/', books.views.books_pub_date),
 
 ]
